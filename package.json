@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && resolve-tspaths"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "typescript": "5.9.2"
+    "resolve-tspaths": "^0.8.23"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
   }
 }

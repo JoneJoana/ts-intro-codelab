@@ -1,33 +1,24 @@
 {
   "compilerOptions": {
-    "module": "commonjs", 
-    "target": "es2020", 
-    "types": [],
+    "target": "es2020",
+    "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-
-    // Other Outputs
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-
-    // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-
-    // Style Options    
-    "noUnusedParameters": true,
-
-    // Recommended Options
     "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
     "skipLibCheck": true,
+    "outDir": "./dist",
+    "declaration": true,
+    "sourceMap": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@utils/*": ["src/utils/*"],
+      "@components/*": ["src/components/*"],
+      "@services/*": ["src/services/*"]
+    },
+    "noUnusedLocals": true,
+    "noUnusedParameters": true, 
   },
-  "include": ["src/**/*"], // sólo queremos que se analicen archivos de TS dentro de la carpeta src
-  "exclude": ["node_modules", "dist"] // no queremos que se analicen archivos de TS dentro de la carpeta node_modules ni dist
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
