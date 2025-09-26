@@ -1,9 +1,17 @@
+type FoodNeeds = {
+    amount: number;
+    brand: string;
+    frequency:number;
+}
+
 interface Animal {
     eat(): void;
+    getFoodNeeds(): Partial<FoodNeeds>;
 }
 
 interface Cat extends Animal {
-    meow(): string;    
+    meow(): string;
+    getFoodNeeds(): FoodNeeds;
 }
 
 interface Dog extends Animal {
@@ -17,6 +25,13 @@ class PersianCat implements Cat {
     meow(): string {
         return "Meeow";
     }
+    getFoodNeeds(): FoodNeeds {
+        return {
+            amount: 100,
+            brand: 'not-Whiskas',
+            frequency: 3,
+        };
+    }
 }
 
 class BeagleDog implements Dog {
@@ -26,21 +41,28 @@ class BeagleDog implements Dog {
   bark(): string {
     return "Woof";
   }
+  getFoodNeeds(): Partial<FoodNeeds> {
+      return {
+        amount: 100,
+      };
+  }
 }
 
+type Pet = Cat | Dog;
+
 interface PetShop {
-    sellPet(): Cat | Dog;
+    sellPet(): Pet;
 }
 
 class PawPetShop implements PetShop {
-  sellPet(): Cat | Dog {
+  sellPet(): Pet {
     return Math.random() > 0.5 ? new PersianCat() : new BeagleDog();
   }
 }
 
 const myNewPet = new PawPetShop().sellPet();
 
-function makePetNoise(pet: Cat | Dog) {    
+function makePetNoise(pet: Pet) {    
     if(pet instanceof PersianCat){
         return pet.meow();
     }
