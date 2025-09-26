@@ -1,17 +1,17 @@
 type FoodNeeds = {
-    amount: number;
-    brand: string;
-    frequency:number;
+    amount?: number;
+    brand?: string;
+    frequency?:number;
 }
 
 interface Animal {
     eat(): void;
-    getFoodNeeds(): Partial<FoodNeeds>;
+    getFoodNeeds(): FoodNeeds;
 }
 
 interface Cat extends Animal {
     meow(): string;
-    getFoodNeeds(): FoodNeeds;
+    getFoodNeeds(): Required<FoodNeeds>;
 }
 
 interface Dog extends Animal {
@@ -25,7 +25,7 @@ class PersianCat implements Cat {
     meow(): string {
         return "Meeow";
     }
-    getFoodNeeds(): FoodNeeds {
+    getFoodNeeds(): Required<FoodNeeds> {
         return {
             amount: 100,
             brand: 'not-Whiskas',
