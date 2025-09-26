@@ -16,6 +16,7 @@ interface Cat extends Animal {
 
 interface Dog extends Animal {
     bark(): string;
+    getFoodNeeds(): Pick<FoodNeeds, "amount">;
 }
 
 class PersianCat implements Cat {
@@ -41,7 +42,7 @@ class BeagleDog implements Dog {
   bark(): string {
     return "Woof";
   }
-  getFoodNeeds(): Partial<FoodNeeds> {
+  getFoodNeeds(): Pick<FoodNeeds, "amount"> {
       return {
         amount: 100,
       };
