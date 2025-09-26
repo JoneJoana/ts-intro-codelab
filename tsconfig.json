@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2020",
-    "module": "commonjs",
+    "module": "es2020", //commonjs
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -9,9 +9,8 @@
     "outDir": "./dist",
     "declaration": true,
     "sourceMap": true,
-
-    "baseUrl": "./",
     
+    "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
       "@utils/*": ["src/utils/*"],

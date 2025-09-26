@@ -13,5 +13,6 @@
   "devDependencies": {
     "resolve-tspaths": "0.8.23",
     "typescript": "^5.9.2"
-  }
+  },
+  "type": "module"
 }
