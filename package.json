@@ -10,10 +10,8 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "resolve-tspaths": "^0.8.23"
-  },
   "devDependencies": {
+    "resolve-tspaths": "0.8.23",
     "typescript": "^5.9.2"
   }
 }

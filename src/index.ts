@@ -1,19 +1,22 @@
+import { Dog } from "@/Dog";
+
+
 const hello: string = "Hello, World!";
 console.log(hello);
 
-const a: string = "Hello, World!";
-const b: number = 1;
-const c: boolean = true;
-const d: null = null;
-const e: undefined = undefined;
-const f: symbol = Symbol("foo");
-const g: bigint = BigInt(100); 
-const h: any = "Hello, World!";
-const i: unknown = "Hello, World!";
-const j: string[] = ["Hello", "World"];
-const k: Array<string> = ["Hello", "World"];
+//const b: number = 1;
+//const a: string = "Hello, World!";
+//const c: boolean = true;
+//const d: null = null;
+//const e: undefined = undefined;
+//const f: symbol = Symbol("foo");
+//const g: bigint = BigInt(100); 
+//const h: any = "Hello, World!";
+//const i: unknown = "Hello, World!";
+//const j: string[] = ["Hello", "World"];
+//const k: Array<string> = ["Hello", "World"];
 // definimos una función que recibe un number y devuelve un boolean
-const l: (param: number) => boolean = (param: number) => param > 0;
+//const l: (param: number) => boolean = (param: number) => param > 0;
 
 interface TransportVehicle {
     getTravelTime(trip: Trip): Metric;
@@ -71,3 +74,8 @@ availableTransportVehicles.forEach((vehicle) => {
   console.log(vehicle.getTravelTime(trip));
 }); // { value: 500000, unit: 's' } y { value: 54400, unit: 's' }
 
+
+console.log("hello!");
+const dog = new Dog();
+dog.bark();
+console.log("bye bye bye byeeee!");
