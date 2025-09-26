@@ -89,3 +89,20 @@ function makePetNoise(pet: Pet) {
         return pet.bark();
     }
 }
+
+interface FoodInfo {
+    amount: number;
+    brand: string;
+}
+
+type FoodType = "dogFood" | "catFood";
+
+type FoodStorage = Record<FoodType, FoodInfo[]>;
+
+const animalFoodStorage: FoodStorage = {
+  catFood: [
+    { amount: 10, brand: "Whiskas" },
+    { amount: 5, brand: "Purina" },
+  ],
+  dogFood: [{ amount: 5, brand: "Pedigree" }],
+};
