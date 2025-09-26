@@ -4,18 +4,26 @@ type FoodNeeds = {
     frequency?:number;
 }
 
+type Vaccines = {
+  rabies: boolean;
+  leptospirosis: boolean;
+};
+
 interface Animal {
     eat(): void;
     getFoodNeeds(): FoodNeeds;
+    hasVaccines(): Partial<Vaccines>;
 }
 
 interface Cat extends Animal {
     meow(): string;
     getFoodNeeds(): Required<FoodNeeds>;
+    hasVaccines(): Omit<Vaccines, "leptospirosis">;
 }
 
 interface Dog extends Animal {
     bark(): string;
+    getFoodNeeds(): Pick<FoodNeeds, "amount">;
 }
 
 class PersianCat implements Cat {
@@ -32,6 +40,11 @@ class PersianCat implements Cat {
             frequency: 3,
         };
     }
+    hasVaccines(): Omit<Vaccines, "leptospirosis"> {
+        return {
+            rabies: true
+        }
+    }
 }
 
 class BeagleDog implements Dog {
@@ -41,10 +54,16 @@ class BeagleDog implements Dog {
   bark(): string {
     return "Woof";
   }
-  getFoodNeeds(): Partial<FoodNeeds> {
+  getFoodNeeds(): Pick<FoodNeeds, "amount"> {
       return {
         amount: 100,
       };
+  }
+  hasVaccines(): Partial<Vaccines> {
+      return{
+        rabies: false,
+        leptospirosis: true
+      }
   }
 }
 
