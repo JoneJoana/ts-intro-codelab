@@ -106,3 +106,15 @@ const animalFoodStorage: FoodStorage = {
   ],
   dogFood: [{ amount: 5, brand: "Pedigree" }],
 };
+
+type Owner = {
+  name: string;
+  surname: string;
+};
+
+const michifuOwner: Readonly<Owner> = {
+  name: "John",
+  surname: "Doe",
+};
+
+// michifuOwner.name = "Jane"; not allowed
