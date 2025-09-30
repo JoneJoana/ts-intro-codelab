@@ -3,8 +3,6 @@ type Entity = {
     is_active: boolean;
 }
 
-//type DetailedEntity = Entity & { name: string; is_active: boolean };
-
 type Result<T> = {
     data: T;
     status: string;
